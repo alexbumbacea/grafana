@@ -17,6 +17,8 @@ interface Props {
 
 export const ElasticsearchProvider: FunctionComponent<Props> = ({ children, onChange, query, datasource }) => {
   const reducer = combineReducers({
+    query: (s: string) => s,
+    alias: (s: string) => s,
     metrics: metricsReducer,
     bucketAggs: bucketAggsReducer,
   });
